@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const base_url = 'http://mydomain.com:3000/api/';
-const base_url_dev = 'http://localhost:8080/api/';
+const base_url = 'http://mydomain.com:3000/api/'
+const base_url_dev = 'https://reportitws.herokuapp.com/api/';
 
 export const get: any = (ePoint: string, params?: any): Promise<any> => {
     return axios.get(base_url_dev + ePoint);
