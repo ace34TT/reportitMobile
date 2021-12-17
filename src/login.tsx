@@ -28,7 +28,6 @@ import {
 import { color } from '../../theme/color'
 import { StyleSheet, ImageBackground } from "react-native";
 import { login } from '../../webservices/userSvc'
-import { UserModal } from "./modal";
 
 const styles = StyleSheet.create({
     container: {
@@ -72,7 +71,11 @@ export default function Login() {
             setLoading(false);
             switch (_login) {
                 case 1:
-                    setShowModal(true)
+                    toast.show({
+                        title: "Information exacte",
+                        status: "error",
+                        description: ""
+                    })
                     break;
                 case 0:
                     toast.show({
@@ -88,7 +91,7 @@ export default function Login() {
     }
 
     return (
-        <><View style={styles.container}>
+        <View style={styles.container}>
             <ImageBackground source={bg} resizeMode="cover" style={styles.image}>
                 <Center alignItems="center">
                     <Text style={styles.text}>
@@ -129,8 +132,6 @@ export default function Login() {
                 </Center>
             </ImageBackground>
         </View>
-            <UserModal setShowModal={setShowModal} showModal={showModal} title={"Connexion"} />
-        </>
     )
 }
 
