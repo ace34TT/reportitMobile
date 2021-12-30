@@ -1,12 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import ListMessage from './src/components/listMessage';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      {/* <Text>Open up App.tsx to start working on your app!</Text>
+      <StatusBar style="auto" /> */}
+      <ListMessage />
+      <Text>Bonjour</Text>
     </View>
   );
 }
