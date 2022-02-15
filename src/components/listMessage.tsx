@@ -1,18 +1,32 @@
-import React, { useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React, { useEffect, useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { IMessage } from "../interfaces/IMessage";
 import { allMsg } from "./../webservices/messageSvc";
 
 export default function ListMessage() {
-    const [message, setmessage] = useState(
-        allMsg().then((res: any) => {
-            setmessage(res)
-        }));
-    console.log(message)
-    return (
-        <View>
+  const [messages, setMessages] = useState(null);
 
-        </View>
-    )
+  //   useEffect(() => {
+  //     getData();
+  //   }, []);
+
+  //   const getData = () => {
+  //     allMsg().then((rep: IMessage[]) => {
+  //       setMessages(rep);
+  //     });
+  //   };
+  return (
+    <View>
+      <Text>Bonjour</Text>
+      {/* <ul>
+                {
+                    messages.map((m: IMessage) => (
+                        <li>{m.content}</li>
+                    ))
+                }
+            </ul> */}
+    </View>
+  );
 }
 
-const styles = StyleSheet.create({})
+// const styles = StyleSheet.create({})
